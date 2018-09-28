@@ -1,0 +1,94 @@
+<div style="text-align:center;background-color:lightgray">
+  <div class="container">
+    <!-- <div class="jumbotron" align="center" style="color:red; background-color: green">
+        <h4>DataBAse Project</h4>       
+    </div>
+  -->
+    <div class='panel panel-primary'>
+      <div class='panel-heading'>
+        <h3> Welcome to Product Application!
+          <div class="text-right"><button type="button" class="btn btn-danger" [routerLink]="['/login']">Logout</button></div>
+        </h3>
+        <h3> Product List!</h3>
+      </div>
+      <div class='panel-body'>
+        <div class='row'>
+          <div class='table-responsive'>
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th><a style="cursor: pointer;" (click)="sortId()">ID</a></th>
+                  <th><a style="cursor: pointer;" (click)="sortName()">Name</a></th>
+                  <th><a style="cursor: pointer;" (click)="sortDes()">Description</a></th>
+                  <th><a style="cursor: pointer;" (click)="sortPrice()">Price</a></th>
+                  <th>Delete</th>
+                  <th>Update</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let product of info| paginate: { itemsPerPage: 5, currentPage: p }'>
+                  <td align="left">{{product.id}}</td>
+                  <td align="left">{{product.name}}</td>
+                  <td align="left">{{product.description}}</td>
+                  <td align="left">{{product.price | currency:'INR':'symbol'}}</td>
+                  <td align="left"><button type="button" style="cursor: pointer;" class="btn btn-success" (click)="delete(product.id)"
+                      data-toggle='tooltip' title='Will delete this item'>Delete</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-warning" (click)="Update(product.id)" [routerLink]="['/update']" data-toggle='tooltip'
+                      title='Will Edit this item'>Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <button type="button" class="btn btn-success" (click)='add1()' data-toggle='tooltip' title='Will Show form to add an product'>Add
+              Product</button>
+            &nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)='deleteall()' data-toggle='tooltip' title='Will Delete all the products'>Delete
+              All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Add Form-->
+    <div class='panel panel-primary' *ngIf='show==1'>
+      <div class='panel-heading'>
+        <h4>Add New Product</h4>
+      </div>
+      <div class='panel-body'>
+        <div class='row'>
+          <div class='table-responsive'>
+            <table class='table'>
+              <tr>
+                <td>Id</td>
+                <td><input type="text" [(ngModel)]='id1'></td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td><input type="text" [(ngModel)]='name1'> </td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td><input type="text" [(ngModel)]='price1'></td>
+              </tr>
+              <tr>
+                <td>Description</td>
+                <td><input type="text" [(ngModel)]='des1'></td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-success" data-toggle='tooltip' (click)='Add()' title='Add an Product'>Submit</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="cancel()" data-toggle='tooltip' title='Resets the data'>Cancel</button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--used for undersign-->
+  <blockquote class="blockquote-reverse">
+    <footer align='center' style="color:mediumvioletred"><i>Created by</i>:- <span class="glyphicon glyphicon-copyright-mark"
+        align="center"></span> Vaibhav Saxena</footer>
+  </blockquote>
+</div>

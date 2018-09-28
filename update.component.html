@@ -1,0 +1,40 @@
+<div style="text-align:center;background-color:lightgray">
+<div class="container">
+    <div class='panel panel-primary'>
+        <div class='panel-heading'>
+          <h4>Update Product with id number: </h4>
+        </div>
+        <div class='panel-body'>
+          <div class='row'> 
+            <div class='table-responsive'>
+              <table class='table'>
+                <tr>
+                  <td>Id</td>
+                  <td><input type="text" [(ngModel)]='id1' readonly></td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td><input type="text" [(ngModel)]='name1'> </td></tr>
+                <tr>
+                  <td>Price</td>
+                  <td><input type="text" [(ngModel)]='price1'></td></tr>
+                <tr>
+                  <td>Description</td>
+                  <td><input type="text" [(ngModel)]='des1'></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-success" data-toggle='tooltip' (click)='Update()' title='Add an Product'>Submit</button></td>
+                  <td><button type="button" class="btn btn-danger" (click)="cancel()" [routerLink]="['/home']" data-toggle='tooltip'  title='Resets the data'>Cancel</button></td>
+                </tr>      
+               </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!--used for undersign-->
+     <blockquote class="blockquote-reverse">
+      <footer align='center' style="color:mediumvioletred"><i>Created by</i>:- <span class="glyphicon glyphicon-copyright-mark" align="center"></span> Vaibhav Saxena</footer>
+      </blockquote>
+    </div>  
+    

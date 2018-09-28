@@ -1,0 +1,44 @@
+<div style="text-align:center;background-color:lightgray">
+  <div class="container">
+      <div class='panel panel-primary'>
+          <div class='panel-heading'>
+            <h4>Signup as a New user </h4>
+          </div>
+          <div class='panel-body'>
+            <div class='row'> 
+              <div class='table-responsive'>
+                <table class='table'>
+                  <tr>
+                    <td>UserId</td>
+                    <td><input type="text" [(ngModel)]='id1'></td>
+                  </tr>
+                  <tr>
+                    <td>Name</td>
+                    <td><input type="text" [(ngModel)]='name1'> </td></tr>
+                  <tr>
+                    <td>Mobile</td>
+                    <td><input type="text" [(ngModel)]='mobile1'></td></tr>
+                  <tr>
+                    <td>password</td>
+                    <td><input type="password" [(ngModel)]='pass1'></td>
+                  </tr>
+                  <tr>
+                    <td>Confirm password</td>
+                    <td><input type="password" [(ngModel)]='pass2'></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" class="btn btn-success" data-toggle='tooltip' (click)='signup()' title='Create a new user'>Signup</button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="cancel()" [routerLink]="['/login']" data-toggle='tooltip'  title='Takes you to login page'>Cancel</button></td>
+                  </tr>      
+                 </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!--used for undersign-->
+       <blockquote class="blockquote-reverse">
+        <footer align='center' style="color:mediumvioletred"><i>Created by</i>:- <span class="glyphicon glyphicon-copyright-mark" align="center"></span> Vaibhav Saxena</footer>
+        </blockquote>
+      </div>  
+      
